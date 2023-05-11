@@ -22,7 +22,7 @@ const VideoDetail = () => {
   
   if(!videoDetail?.snippet) return 'Loading...'
   
-  const { snippet: { title, channelId, channelTitle, publishedAt, localized: { description } }, statistics: { viewCount, likeCount } } = videoDetail;
+  const { snippet: { title, channelId, channelTitle, publishedAt, localized: { description } } } = videoDetail;
   const options = { year: 'numeric', month: 'long', day: 'numeric' }
   
   console.log(videoDetail)
@@ -72,12 +72,6 @@ const VideoDetail = () => {
                 <Typography variant="body2" pl={2}>
                   {new Date(publishedAt).toLocaleDateString('en-US', options)}
                 </Typography>
-                {/* <Stack direction="row" gap="20px" alignItems="center"> */}
-     
-                  {/* <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                    {parseInt(likeCount).toLocaleString()} likes
-                  </Typography>
-                </Stack> */}
               </Stack>
               <Typography variant="body1" sx={{ color: '#fff', pl: 2 }}>
                 {description.split('\n').map((line, index) => {
