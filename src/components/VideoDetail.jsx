@@ -22,10 +22,9 @@ const VideoDetail = () => {
   
   if(!videoDetail?.snippet) return 'Loading...'
   
-  const { snippet: { title, channelId, channelTitle, publishedAt, localized: { description } } } = videoDetail;
+  const { snippet: { title, channelId, channelTitle, publishedAt, localized: { description } }, statistics: { viewCount } } = videoDetail;
   const options = { year: 'numeric', month: 'long', day: 'numeric' }
   
-  console.log(videoDetail)
   return (
     <Box minHeight="95vh">
       <Stack direction={{ xs: 'column', md: 'row' }}>
